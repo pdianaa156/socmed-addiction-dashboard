@@ -20,7 +20,7 @@ st.title("""Welcome to my Dashboard""")
 st.subheader("Prepared by:")
 st.markdown("""
 - **Putri Diana binti Abdul Rasyid** (2518420)  
-- **Nur Khairina Najihah**
+- **Nur Khairina Najihah binti**
 """)
 
 st.subheader("Project Background")
