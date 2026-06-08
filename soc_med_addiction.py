@@ -10,6 +10,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 #import plotly.express as px
 
+st.set_page_config(layout="wide") # Forces a sleek dashboard distribution
+
+st.markdown("""
+    <style>
+    div[data-testid="stMetricValue"] { color: #00F2FE; font-family: 'Roboto', sans-serif; font-weight: bold; }
+    div[data-testid="stMetricLabel"] { color: #A0AEC0; }
+    .kpi-container { background-color: #1A202C; padding: 15px; border-radius: 8px; border-left: 4px solid #00F2FE; }
+    </style>
+    """, unsafe_allow_html=True)
+
 #st.image(r'C:\Users\Pter\Desktop\Dashboard\banner2.png')
 st.image('banner2.png')
 
