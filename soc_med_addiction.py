@@ -95,7 +95,7 @@ ax.set_title(f"Percentage of Teenagers ({age_pie}) by Addiction Category")
 st.pyplot(fig)
 
 st.subheader("Scatter Plot")
-st.markdownf"**Addiction Level vs Daily Social Media Usage per hour for {age_reg}**")
+st.markdown(f"**Addiction Level vs Daily Social Media Usage per hour for {age_reg}**")
 
 # Age selection widget (dropdown)
 age_reg = st.selectbox("Select Age for Regression Plot", options=["All Ages"] + list(range(13, 20)))
