@@ -9,6 +9,24 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 #import plotly.express as px
+import streamlit as st
+
+# Add custom CSS for background gradient
+page_bg = """
+<style>
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(to bottom right, #E6E6FA, #D8BFD8);
+}
+[data-testid="stHeader"] {
+    background: rgba(0,0,0,0); /* transparent header */
+}
+[data-testid="stSidebar"] {
+    background: #F8F0FF; /* optional: soft lilac sidebar */
+}
+</style>
+"""
+
+st.markdown(page_bg, unsafe_allow_html=True)
 
 #Load image
 st.image('banner2.png')
