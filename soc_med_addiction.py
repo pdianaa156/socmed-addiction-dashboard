@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 #import plotly.express as px
 
-st.set_page_config(layout="wide") # Forces a sleek dashboard distribution
+#st.set_page_config(layout="wide") # Forces a sleek dashboard distribution
 
 st.markdown("""
     <style>
