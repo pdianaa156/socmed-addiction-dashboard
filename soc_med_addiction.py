@@ -10,37 +10,25 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 #import plotly.express as px
 
-#st.set_page_config(layout="wide") # Forces a sleek dashboard distribution
-
-st.markdown("""
-    <style>
-    div[data-testid="stMetricValue"] { color: #00F2FE; font-family: 'Roboto', sans-serif; font-weight: bold; }
-    div[data-testid="stMetricLabel"] { color: #A0AEC0; }
-    .kpi-container { background-color: #1A202C; padding: 15px; border-radius: 8px; border-left: 4px solid #00F2FE; }
-    </style>
-    """, unsafe_allow_html=True)
-
-#st.image(r'C:\Users\Pter\Desktop\Dashboard\banner2.png')
+#Load image
 st.image('banner2.png')
-
-#st.date_input("Select a date")
 
 st.title("""Welcome to my Dashboard""")
 
 st.subheader("Prepared by:")
-st.markdown("""
-- **Putri Diana binti Abdul Rasyid** (2518420)  
-- **Nur Khairina Najihah binti Hairul Nizam** (2518796)
-""")
+st.markdown("**Putri Diana binti Abdul Rasyid** (2518420)  and **Nur Khairina Najihah binti Hairul Nizam** (2518796)")
 
-#upload data
-#upload_file = st.file_uploader("Please upload here:", type = 'csv')
-
-
-#df = pd.read_csv(r"C:\Users\welcome\Desktop\BSMS1306\streamlit\Tips.csv")
+#Load dataset
 df = pd.read_csv("Social_Media_Addiction.csv")
-#df = pd.read_csv(upload_file)
 
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.metric("Total Teenagers", len(DF))
+with col2:
+    st.metric("Average Daily Usage", round(DF["Daily Social Media per hour"].mean(), 2))
+with col3:
+    st.metric("Selected Age Range", "13–19 (All Ages)")
+    
 #Create two columns
 col1, col2 = st.columns(2)
 
@@ -55,12 +43,6 @@ DF = pd.read_csv('socmed_cleaned.csv')
 with col2:
     st.subheader("Cleaned Data")
     st.write(DF)
-
-# Age selection widget (dropdown)
-#selected_age = st.selectbox("Select Age", options=range(13, 20))
-
-# Filter teenagers by selected age
-#teenagers = DF[(DF["Age"] == selected_age)]
 
 st.subheader("Pie Chart")
 
