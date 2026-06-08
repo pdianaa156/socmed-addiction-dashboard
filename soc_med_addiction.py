@@ -31,15 +31,20 @@ st.markdown("""
 df = pd.read_csv("Social_Media_Addiction.csv")
 #df = pd.read_csv(upload_file)
 
+#Create two columns
+col1, col2 = st.columns(2)
+
 #show data
-st.subheader("Raw Data")
-st.write(df)
+with col1:
+    st.subheader("Raw Data")
+    st.write(df)
 
 DF = pd.read_csv('socmed_cleaned.csv')
 
 #show data
-st.subheader("Cleaned Data")
-st.write(DF)
+with col2:
+    st.subheader("Cleaned Data")
+    st.write(DF)
 
 # Age selection widget (dropdown)
 #selected_age = st.selectbox("Select Age", options=range(13, 20))
