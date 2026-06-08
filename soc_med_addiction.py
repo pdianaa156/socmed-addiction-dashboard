@@ -54,6 +54,9 @@ DF = pd.read_csv('socmed_cleaned.csv')
 st.subheader("Cleaned Data")
 st.write(DF)
 
+# Age selection widget
+selected_age = st.slider("Select Age", min_value=13, max_value=19, value=15)
+
 # Filter teenagers (age 13–19)
 teenagers = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
 
