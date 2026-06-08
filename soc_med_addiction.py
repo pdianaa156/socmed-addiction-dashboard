@@ -115,7 +115,21 @@ ax.set_ylabel("Addiction Level")
 # Show chart in Streamlit
 st.pyplot(fig)
 
-st.markdown("**Addiction Level vs Sleep Hours**")
+# Age selection widget (dropdown)
+age_usage = st.selectbox("Select Age for Regression Plot", options=["All Ages"] + list(range(13, 20)))
+#df_reg = DF[DF["Age"] == age_reg]
+
+if age_usage == "All Ages":
+    df_usage = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
+    age_mark = "All Ages"
+else:
+    df_usage = DF[DF["Age"] == age_reg]
+    age_mark = f"Age {age_reg}"
+
+# Title using safe label
+st.markdown(f"**Addiction Level vs Sleep Hours for {age_mark}**")
+
+#st.markdown("**Addiction Level vs Sleep Hours**")
 # Create regression plot
 fig, ax = plt.subplots(figsize=(8,6))
 sns.regplot(
