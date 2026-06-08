@@ -167,6 +167,7 @@ age_bar = st.selectbox(
    "Select Age for Bar Chart",
     options=["All Ages"] + list(range(13, 20)),
     key="age_bar_select"          # different unique key for bar chart#)
+)
 
 if age_reg == "All Ages":
     df_reg = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
