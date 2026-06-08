@@ -20,7 +20,7 @@ st.title("""Welcome to my Dashboard""")
 st.subheader("Prepared by:")
 st.markdown("""
 - **Putri Diana binti Abdul Rasyid** (2518420)  
-- **Nur Khairina Najihah binti Haitul Nizam (251)**
+- **Nur Khairina Najihah binti Hairul Nizam** (2518796)
 """)
 
 st.subheader("Project Background")
@@ -32,8 +32,8 @@ To address these growing lifestyle concerns, research-based and data-driven find
 
 st.subheader("Project Objective")
 st.markdown("""
-- To examine the relationship between social media addiction and psychological well-being indicators, specially on students’ sleep duration and screen time before sleep.  (graph:  scatter plot with a tradeline)
-- To investigate the consequences of excessive digital consumption by analyzing relationship between a student’s social media addiction and their social interaction level. (Clustered bar chart)
+- To examine the relationship between social media addiction and physiological well-being indicators, specially on students’ sleep durTo investigate the consequences of excessive digital consumption by analysing relationship between a student’s social media addiction and their social interaction level. 
+- To investigate the consequences of excessive digital consumption by analysing relationship between a student’s social media addiction and their social interaction level. 
 """)
 
 #upload data
@@ -177,6 +177,12 @@ st.pyplot(fig)
 # In[ ]:
 
 st.subheader("Discussion")
+st.write("""The findings obtained from the dataset provide strong evidence that support the study’s initial objectives. By analysing the behavioural and physiological data of the teenager group, clear patterns emerge regarding how excessive social media use affects important aspects of students’ daily lives.\n
+Addressing the first objective, the scatter plot was used to examine the relationship between social media addiction and sleep duration. The result of the plotting shows a clear negative linear correlation. As illustrated by the downward-sloping regression line, higher addiction levels consistently correspond with reduced nightly sleep hours. This finding strongly supports the theoretical framework discussed in the background of this study. The data suggests that compulsive social media use disrupts healthy sleep habits.\n
+In addition, when students spend excessive amounts of time on digital platforms, the reduction in sleep is further worsened by factors such as nighttime blue-light exposure and increase mental stimulation before sleep (Alshoaibi et al., 2023; Mohd Saat et al., 2024). Instead of achieving the recommended 7 to 9 hours of sleep needed for a healthy body and psychological well-being, highly addicted students tend to cluster around shorter sleep durations, making them more vulnerable to digital fatigue.\n
+Furthermore, for the second objective, a bar chart was used to investigate the relationship between a students’ level of real-world social interaction and their average digital addiction score. The result of the plot reveals a clear step-down relationship. Students categorized within the “low’ social interaction group recorded the highest addiction scores ( ≈6.5), whereas those with “high” levels of real-world interaction shows significantly lower addiction scores (≈3.5).\n
+Although the bar chart presents social interaction levels on the X-axis for comparison between groups, the real-world implications suggest a two-way relationship. Students who experience loneliness may turn to social media more frequently, but it is also likely that increasing social media addiction actively draws students away from face-to-face interactions, leading to a decline in their real--world social engagement.\n
+This pattern supports the “time displacement” theory of behavioural addiction (Dienlin & Johannes, 2020). As virtual interactions occupy a larger portion of a students’ daily time and attention, real-world social interactions tend to decrease, contributing to social isolation and highlighting social media addiction as big threat to interpersonal development.""")
 st.subheader("Conclusion")
 
 
