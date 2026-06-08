@@ -55,13 +55,22 @@ st.subheader("Cleaned Data")
 st.write(DF)
 
 # Age selection widget (dropdown)
-selected_age = st.selectbox("Select Age", options=range(13, 20))
+#selected_age = st.selectbox("Select Age", options=range(13, 20))
 
 # Filter teenagers by selected age
-teenagers = DF[(DF["Age"] == selected_age)]
+#teenagers = DF[(DF["Age"] == selected_age)]
+
+# Age selection widget (dropdown)
+age_pie = st.selectbox("Select Age for Pie Chart", options=["All Ages"] + list(range(13, 20)))
+
+# Filter teenagers by selected age
+if age_pie == "All Ages":
+    df_pie = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
+else:
+    df_pie = DF[DF["Age"] == age_pie]
 
 # Count number of teenagers in each Addiction Category
-counts = teenagers["Addiction Category"].value_counts().reset_index()
+counts = df_pie["Addiction Category"].value_counts().reset_index()
 counts.columns = ["Addiction Category", "Count"]
 
 # Explicitly set category order
@@ -79,7 +88,7 @@ ax.pie(
     startangle=90,
     colors=["#8fd9b6", "#f6c85f", "#ff6f61"]  # optional custom colors
 )
-ax.set_title("Percentage of Teenagers by Addiction Category")
+ax.set_title(f"Percentage of Teenagers ({age_pie}) by Addiction Category")
 
 # Show chart in Streamlit
 st.pyplot(fig)
