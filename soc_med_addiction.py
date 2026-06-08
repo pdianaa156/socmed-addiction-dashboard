@@ -54,11 +54,11 @@ DF = pd.read_csv('socmed_cleaned.csv')
 st.subheader("Cleaned Data")
 st.write(DF)
 
-# Age selection widget
-selected_age = st.slider("Select Age", min_value=13, max_value=19, value=15)
+# Age selection widget (dropdown)
+selected_age = st.selectbox("Select Age", options=range(13, 20))
 
-# Filter teenagers (age 13–19)
-teenagers = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
+# Filter teenagers by selected age
+teenagers = DF[(DF["Age"] == selected_age)]
 
 # Count number of teenagers in each Addiction Category
 counts = teenagers["Addiction Category"].value_counts().reset_index()
