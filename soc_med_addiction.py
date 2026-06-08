@@ -181,7 +181,7 @@ else:
 fig, ax = plt.subplots(figsize=(8,5))
 sns.barplot(
     data=df_bar,   # ✅ use filtered dataset
-    x='Social Interaction Level',
+    #x='Social Interaction Level',
     y='Addiction Level',
     hue='Social Interaction Level',
     order=['low', 'medium', 'high'],
@@ -190,6 +190,10 @@ sns.barplot(
     ax=ax
 )
 
+# Add labels on top of bars
+for container in ax.containers:
+    ax.bar_label(container, fmt='%.2f', label_type='edge', padding=3)
+    
 # Add labels and title
 ax.set_title('Average Social Media Addiction Level by Social Interaction Category',
              fontsize=13, fontweight='bold', pad=15)
