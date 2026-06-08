@@ -95,16 +95,20 @@ ax.set_title(f"Percentage of Teenagers ({age_pie}) by Addiction Category")
 st.pyplot(fig)
 
 st.subheader("Scatter Plot")
-st.markdown(f"**Addiction Level vs Daily Social Media Usage per hour for {age_reg}**")
 
 # Age selection widget (dropdown)
 age_reg = st.selectbox("Select Age for Regression Plot", options=["All Ages"] + list(range(13, 20)))
-df_reg = DF[DF["Age"] == age_reg]
+#df_reg = DF[DF["Age"] == age_reg]
 
 if age_reg == "All Ages":
     df_reg = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
+    age_label = "All Ages"
 else:
     df_reg = DF[DF["Age"] == age_reg]
+    age_label = f"Age {age_reg}"
+
+# Title using safe label
+st.markdown(f"**Addiction Level vs Daily Social Media Usage per hour for {age_label}**")
 
 # Create regression plot
 fig, ax = plt.subplots(figsize=(8,6))
