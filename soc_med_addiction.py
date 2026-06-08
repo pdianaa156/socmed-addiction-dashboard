@@ -15,13 +15,19 @@ import streamlit as st
 page_bg = """
 <style>
 [data-testid="stAppViewContainer"] {
-    background: linear-gradient(to bottom right, #E6E6FA, #D8BFD8);
+    background: linear-gradient(to bottom right,
+        #FFFFFF,   /* white */
+        #ADD8E6,   /* light blue */
+        #87CEEB,   /* sky blue */
+        #4682B4,   /* steel blue */
+        #0F1C3F    /* darker navy blue */
+    );
 }
 [data-testid="stHeader"] {
     background: rgba(0,0,0,0); /* transparent header */
 }
 [data-testid="stSidebar"] {
-    background: #F8F0FF; /* optional: soft lilac sidebar */
+    background: #F0F8FF; /* optional: soft blue sidebar */
 }
 </style>
 """
