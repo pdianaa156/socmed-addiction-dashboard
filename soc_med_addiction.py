@@ -155,10 +155,10 @@ st.pyplot(fig)
 st.subheader("Bar Chart")
 st.markdown("**Average Addiction Level by Social Interaction Category**")
 
-age_reg = st.selectbox(
-    "Select Age for Regression Plot",
+age_bar = st.selectbox(
+    "Select Age for Bar Chart",
     options=["All Ages"] + list(range(13, 20)),
-    key="age_regression_select"   # ✅ unique key
+    key="age_bar_select"          # different unique key for bar chart
 )
 
 if age_reg == "All Ages":
