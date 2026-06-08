@@ -181,9 +181,9 @@ else:
 fig, ax = plt.subplots(figsize=(8,5))
 sns.barplot(
     data=df_bar,   # ✅ use filtered dataset
-    #x='Social Interaction Level',
+    x='Social Interaction Level',
     y='Addiction Level',
-    hue='Social Interaction Level',
+    #hue='Social Interaction Level',
     order=['low', 'medium', 'high'],
     palette='Blues_r',
     errorbar=None,
