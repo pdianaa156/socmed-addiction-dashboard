@@ -116,8 +116,11 @@ ax.set_ylabel("Addiction Level")
 st.pyplot(fig)
 
 # Age selection widget (dropdown)
-age_usage = st.selectbox("Select Age for Regression Plot", options=["All Ages"] + list(range(13, 20)))
-#df_reg = DF[DF["Age"] == age_reg]
+age_usage = st.selectbox(
+    "Select Age for Regression Plot",
+    options=["All Ages"] + list(range(13, 20)),
+    key="age_regression_select"   # ✅ unique key
+)
 
 if age_usage == "All Ages":
     df_usage = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
