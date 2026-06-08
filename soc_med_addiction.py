@@ -81,7 +81,7 @@ ax.pie(
     labels=counts["Addiction Category"],
     autopct="%1.1f%%",
     startangle=90,
-    colors=["#8fd9b6", "#f6c85f", "#ff6f61"]  # optional custom colors
+    colors=["#4a90e2", "#5dade2", "#85c1e9"]  # optional custom colors
 )
 ax.set_title(f"Percentage of Teenagers ({age_pie}) by Addiction Category")
 
