@@ -134,8 +134,8 @@ if age_usage == "All Ages":
     df_usage = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
     age_mark = "All Ages"
 else:
-    df_usage = DF[DF["Age"] == age_reg]
-    age_mark = f"Age {age_reg}"
+    df_usage = DF[DF["Age"] == age_usage]
+    age_mark = f"Age {age_usage}"
 
 # Title using safe label
 st.markdown(f"**Addiction Level vs Sleep Hours for {age_mark}**")
@@ -146,7 +146,7 @@ fig, ax = plt.subplots(figsize=(8,6))
 sns.regplot(
     x="Sleep Hours",
     y="Addiction Level",
-    data=DF,
+    data=df_usage,
     scatter_kws={"alpha":0.6},
     line_kws={"color":"red"},
     ax=ax
