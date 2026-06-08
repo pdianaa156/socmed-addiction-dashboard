@@ -60,6 +60,8 @@ st.write(DF)
 # Filter teenagers by selected age
 #teenagers = DF[(DF["Age"] == selected_age)]
 
+st.subheader("Pie Chart")
+
 # Age selection widget (dropdown)
 age_pie = st.selectbox("Select Age for Pie Chart", options=["All Ages"] + list(range(13, 20)))
 
@@ -79,7 +81,6 @@ counts["Addiction Category"] = pd.Categorical(
     counts["Addiction Category"], categories=order, ordered=True
 )
 
-st.subheader("Pie Chart")
 fig, ax = plt.subplots(figsize=(7,7))
 ax.pie(
     counts["Count"],
@@ -94,11 +95,16 @@ ax.set_title(f"Percentage of Teenagers ({age_pie}) by Addiction Category")
 st.pyplot(fig)
 
 st.subheader("Scatter Plot")
-st.markdown("**Addiction Level vs Daily Social Media Usage per hour**")
+st.markdownf"**Addiction Level vs Daily Social Media Usage per hour for {age_reg}**")
 
 # Age selection widget (dropdown)
-age_reg = st.selectbox("Select Age for Regression Plot", options=range(13, 20))
+age_reg = st.selectbox("Select Age for Regression Plot", options=["All Ages"] + list(range(13, 20)))
 df_reg = DF[DF["Age"] == age_reg]
+
+if age_reg == "All Ages":
+    df_reg = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
+else:
+    df_reg = DF[DF["Age"] == age_reg]
 
 # Create regression plot
 fig, ax = plt.subplots(figsize=(8,6))
