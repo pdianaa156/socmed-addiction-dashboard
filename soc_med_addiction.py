@@ -9,7 +9,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 #import plotly.express as px
-import streamlit as st
 
 # Add custom CSS for background gradient
 page_bg = """
@@ -163,26 +162,28 @@ st.pyplot(fig)
 st.subheader("Bar Chart")
 st.markdown("**Average Addiction Level by Social Interaction Category**")
 
+# Age selection widget (dropdown)
 age_bar = st.selectbox(
-   "Select Age for Bar Chart",
+    "Select Age for Bar Chart",
     options=["All Ages"] + list(range(13, 20)),
-    key="age_bar_select"          # different unique key for bar chart#)
+    key="age_bar_select"
 )
 
-if age_reg == "All Ages":
-    df_reg = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
-    age_reg_label = "All Ages"
+# Filter dataset based on selected age
+if age_bar == "All Ages":
+    df_bar = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
+    age_bar_label = "All Ages"
 else:
-    df_reg = DF[DF["Age"] == age_reg]
-    age_reg_label = f"Age {age_reg}"
-    
+    df_bar = DF[DF["Age"] == age_bar]
+    age_bar_label = f"Age {age_bar}"
+
 # Create bar plot
 fig, ax = plt.subplots(figsize=(8,5))
 sns.barplot(
-    data= df_reg, 
-    x='Social Interaction Level', 
-    y='Addiction Level', 
-    hue='Social Interaction Level',   # Explicitly sets hue to match x
+    data=df_bar,   # ✅ use filtered dataset
+    x='Social Interaction Level',
+    y='Addiction Level',
+    hue='Social Interaction Level',
     order=['low', 'medium', 'high'],
     palette='Blues_r',
     errorbar=None,
