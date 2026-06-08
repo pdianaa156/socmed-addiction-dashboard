@@ -139,23 +139,23 @@ st.pyplot(fig)
 st.subheader("Bar Chart")
 st.markdown("**Average Addiction Level by Social Interaction Category**")
 
-age_bar = st.selectbox(
-    "Select Age for Bar Chart",
-    options=["All Ages"] + list(range(13, 20)),
-    key="age_bar_select"          # different unique key for bar chart
-)
+#age_bar = st.selectbox(
+   #"Select Age for Bar Chart",
+    #options=["All Ages"] + list(range(13, 20)),
+    #key="age_bar_select"          # different unique key for bar chart
+#)
 
-if age_reg == "All Ages":
-    df_reg = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
-    age_reg_label = "All Ages"
-else:
-    df_reg = DF[DF["Age"] == age_reg]
-    age_reg_label = f"Age {age_reg}"
+#if age_reg == "All Ages":
+    #df_reg = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
+    #age_reg_label = "All Ages"
+#else:
+    #df_reg = DF[DF["Age"] == age_reg]
+    #age_reg_label = f"Age {age_reg}"
     
 # Create bar plot
 fig, ax = plt.subplots(figsize=(8,5))
 sns.barplot(
-    data=df_reg, 
+    data=DF, 
     x='Social Interaction Level', 
     y='Addiction Level', 
     hue='Social Interaction Level',   # Explicitly sets hue to match x
