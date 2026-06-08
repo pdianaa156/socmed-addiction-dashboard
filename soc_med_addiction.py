@@ -194,7 +194,7 @@ ax.set_title('Average Social Media Addiction Level by Social Interaction Categor
 ax.set_xlabel('Real-World Social Interaction Level', fontsize=11)
 ax.set_ylabel('Average Addiction Level Score', fontsize=11)
 
-#plt.tight_layout()
+plt.tight_layout()
 
 # Show chart in Streamlit
 st.pyplot(fig)
