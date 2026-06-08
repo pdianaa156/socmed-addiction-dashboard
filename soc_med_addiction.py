@@ -87,12 +87,16 @@ st.pyplot(fig)
 st.subheader("Scatter Plot")
 st.markdown("**Addiction Level vs Daily Social Media Usage per hour**")
 
+# Age selection widget (dropdown)
+age_reg = st.selectbox("Select Age for Regression Plot", options=range(13, 20))
+df_reg = DF[DF["Age"] == age_reg]
+
 # Create regression plot
 fig, ax = plt.subplots(figsize=(8,6))
 sns.regplot(
     x="Daily Social Media per hour",
     y="Addiction Level",
-    data=DF,
+    data=df_reg,
     scatter_kws={"alpha":0.6},
     line_kws={"color":"red"},
     ax=ax
