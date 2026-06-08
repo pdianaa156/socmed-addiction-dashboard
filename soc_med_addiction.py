@@ -21,13 +21,25 @@ st.markdown("**Putri Diana binti Abdul Rasyid** (2518420)  and **Nur Khairina Na
 #Load dataset
 df = pd.read_csv("Social_Media_Addiction.csv")
 
+# Metrics section
 col1, col2, col3 = st.columns(3)
+
 with col1:
     st.metric("Total Teenagers", len(DF))
+
 with col2:
-    st.metric("Average Daily Usage", round(DF["Daily Social Media per hour"].mean(), 2))
+    # Filter by selected age for consistency
+    if age_pie == "All Ages":
+        df_metric = DF[(DF["Age"] >= 13) & (DF["Age"] <= 19)]
+    else:
+        df_metric = DF[DF["Age"] == age_pie]
+
+    avg_usage = round(df_metric["Daily Social Media per hour"].mean(), 2)
+    st.metric("Average Daily Usage", avg_usage)
+
 with col3:
-    st.metric("Selected Age Range", "13–19 (All Ages)")
+    age_label = f"Age {age_pie}" if age_pie != "All Ages" else "13–19 (All Ages)"
+    st.metric("Selected Age Range", age_label)
     
 #Create two columns
 col1, col2 = st.columns(2)
